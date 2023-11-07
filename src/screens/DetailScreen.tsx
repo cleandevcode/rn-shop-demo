@@ -110,7 +110,7 @@ const DetailScreen: React.FC = () => {
             width: 40,
             height: 40,
             borderWidth: 1,
-            borderColor: `green`,
+            borderColor: `black`,
             marginTop: 5,
             backgroundColor: product?.colour,
           }}
