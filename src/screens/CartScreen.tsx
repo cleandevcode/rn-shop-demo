@@ -55,7 +55,7 @@ const CartScreen: React.FC = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: `white` }}>
       <FlatList
         data={cart}
-        contentContainerStyle={{ padding: 10, flex: 1, marginTop: 30 }}
+        contentContainerStyle={{ padding: 10, marginTop: 30 }}
         renderItem={renderItem}
         ListHeaderComponent={<CartHeader cart={cart} />}
         ListEmptyComponent={EmptyList}

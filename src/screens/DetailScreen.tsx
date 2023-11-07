@@ -60,7 +60,12 @@ const DetailScreen: React.FC = () => {
           resizeMode="contain"
         />
         <Text variant="headlineLarge">{product?.name}</Text>
-        <Text variant="bodyLarge">{product?.brandName}</Text>
+        <View style={{ flexDirection: `row`, alignItems: `center` }}>
+          <Text variant="bodyLarge">{product?.brandName}</Text>
+          <Text variant="bodyMedium" style={{ color: `grey`, marginLeft: 5 }}>
+            #{product?.SKU}
+          </Text>
+        </View>
         <Text variant="bodyMedium" style={{ color: `grey` }}>
           {product?.description}
         </Text>
