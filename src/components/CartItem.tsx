@@ -2,14 +2,7 @@ import React, { useCallback } from "react";
 import { Alert, View } from "react-native";
 import { Cart } from "../utils/types";
 import { Image } from "react-native";
-import {
-  Divider,
-  IconButton,
-  MD3Colors,
-  Text,
-  Dialog,
-  Button,
-} from "react-native-paper";
+import { Divider, IconButton, MD3Colors, Text } from "react-native-paper";
 import { useDispatch } from "react-redux";
 import {
   decrementQuantity,

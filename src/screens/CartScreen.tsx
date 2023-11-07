@@ -12,6 +12,7 @@ type RenderItemProps = {
 };
 
 const CartHeader: React.FC<{ cart: Cart[] }> = ({ cart }) => {
+  if (!cart.length) return <></>;
   return (
     <>
       <View
@@ -31,6 +32,18 @@ const CartHeader: React.FC<{ cart: Cart[] }> = ({ cart }) => {
   );
 };
 
+const EmptyList = () => (
+  <View
+    style={{
+      flex: 1,
+      alignItems: `center`,
+      justifyContent: `center`,
+    }}
+  >
+    <Text style={{ fontSize: 24 }}>No cart</Text>
+  </View>
+);
+
 const CartScreen: React.FC = () => {
   const { cart } = useSelector((state: RootState) => state.cart);
 
@@ -42,9 +55,10 @@ const CartScreen: React.FC = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: `white` }}>
       <FlatList
         data={cart}
-        contentContainerStyle={{ padding: 10 }}
+        contentContainerStyle={{ padding: 10, flex: 1, marginTop: 30 }}
         renderItem={renderItem}
         ListHeaderComponent={<CartHeader cart={cart} />}
+        ListEmptyComponent={EmptyList}
       />
     </SafeAreaView>
   );

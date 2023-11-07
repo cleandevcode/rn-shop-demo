@@ -16,7 +16,7 @@ type RenderItemProps = {
 };
 
 const HomeScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
@@ -43,7 +43,7 @@ const HomeScreen: React.FC = () => {
 
   const navigateToDetail = useCallback(
     (product: Product) => {
-      navigation.navigate(`ProductDetail`, { data: product });
+      navigation.navigate(`Detail`, { data: product });
     },
     [navigation]
   );
